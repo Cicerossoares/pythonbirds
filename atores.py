@@ -52,16 +52,21 @@ class Ator():
         :param intervalo: Intervalo a ser considerado
         :return:
         """
-        pass
+        if self.status== ATIVO and outro.ator.status== ATIVOS:
+            delta_x = abs(self.x - outro_ator.x)
+            delta_y = abs(self.y - outro_ator.y)
+            if delta.x <= 1 and delta.y <= 1:
+                self.status = outro.ator.status = DESTRUIDO
 
 
 
 class Obstaculo(Ator):
-    pass
+    _caracter_ativo = 'O'
+
 
 
 class Porco(Ator):
-    pass
+    _caracter_ativo = '@'
 
 
 class DuploLancamentoExcecao(Exception):
@@ -137,4 +142,4 @@ class PassaroAmarelo(Passaro):
 
 
 class PassaroVermelho(Passaro):
-    pass
+    _caracter_ativo = 'V'
