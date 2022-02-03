@@ -108,7 +108,7 @@ class Fase():
         :return: objeto do tipo Ponto
         """
         for passaro in self._passaros:
-            passaro.caucular_posicao(tempo)
+            passaro.calcular_posicao(tempo)
             for alvo in self._obstaculos + self._porcos:
                 passaro.colidir(alvo, self.intervalo_de_colisao)
             passaro.colidir_com_chao()
